@@ -1,0 +1,105 @@
+<div class="auth-page">
+  <h1 class="heading">
+    <span class="focus">Focus on</span>
+    <span class="today">Today</span>
+  </h1>
+
+  <div class="container auth-container">
+    <div class="auth-header">
+      <h2 class="auth-title">Create your account</h2>
+      <p class="auth-subtitle">Join us to start your productive journey</p>
+    </div>
+
+    <form class="auth-form"  [formGroup]="registrationForm" (ngSubmit)="onSubmit()" novalidate>
+      <div class="form-group">
+        <label class="form-label" for="name">Full Name</label>
+        <div class="input-row">
+          <input
+            type="text"
+            id="name"
+            class="form-input"
+            placeholder="John Doe"
+            name="username"
+            required
+            formControlName="fullName"
+          />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="email">Email address</label>
+        <div class="input-row">
+          <input
+            type="email"
+            id="email"
+            class="form-input"
+            placeholder="you@example.com"
+            autocomplete="email"
+            required
+            formControlName="email"
+          />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="password">Password</label>
+        <div class="input-row password-row">
+          <input
+            type="password"
+            id="password"
+            class="form-input"
+            placeholder="Create a password"
+            autocomplete="new-password"
+            formControlName="password"
+          />
+          <button
+            type="button"
+            class="toggle-password"
+            aria-label="Toggle password visibility"
+          >
+            <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="confirm-password">Confirm Password</label>
+        <div class="input-row password-row">
+          <input
+            type="password"
+            id="confirm-password"
+            class="form-input"
+            placeholder="Confirm your password"
+            autocomplete="new-password"
+            formControlName="confirmPassword"
+          />
+          <button
+            type="button"
+            class="toggle-password"
+            aria-label="Toggle password visibility"
+          >
+            <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <label class="remember-label">
+        <input type="checkbox" class="remember-checkbox" formControlName="agreeTerms" />
+        <span>I agree to Terms and Conditions</span>
+      </label>
+
+      <button type="submit" class="btn-primary">Sign Up</button>
+    </form>
+
+    <p class="auth-footer">
+      Already have an account?
+      <a href="#" class="auth-link">Sign In</a>
+    </p>
+  </div>
+</div>
