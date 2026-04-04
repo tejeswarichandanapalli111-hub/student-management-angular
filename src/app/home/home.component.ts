@@ -14,6 +14,8 @@ export class HomepageComponent {
   goals = [{ id: 1, text: '', completed: false }];
 
   newGoal = '';
+  currentTime = '';
+  userLocation = '';
 
   constructor(
     private router: Router,
@@ -22,7 +24,10 @@ export class HomepageComponent {
 
   ngOnInit() {
     this.timeService.getcurrentTime().subscribe((response: any) => {
-      console.log('Current time from backend:', response.time);
+      this.currentTime = response.time;
+      this.userLocation = response.timeZone;
+      console.log('Current Time:', this.currentTime);
+      console.log('User Location:', this.userLocation);
     });
   }
   addGoal() {
