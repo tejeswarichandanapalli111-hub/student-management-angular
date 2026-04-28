@@ -61,6 +61,10 @@ navbar {
 
 .welcome-section {
   margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border:1px solid#d9e9cc;
 }
 
 .profile-card {
@@ -68,6 +72,10 @@ navbar {
   border: 1px solid #d9e9cc;
   border-radius: 12px;
   padding: 20px;
+}
+
+user-location {
+  margin: right 20px;
 }
 
 .welcome-text {

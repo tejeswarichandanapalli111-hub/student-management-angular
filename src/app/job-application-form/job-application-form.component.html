@@ -1,0 +1,235 @@
+<div class="job application-form-container">
+  <div class="job-application-card">
+    <form class="job-application-card-form" [formGroup]="jobApplicationForm" (ngSubmit)="onSubmit()">
+      <h3>Job Application Form</h3>
+      <section class="form-section personal-info-section">
+        <h4>Personal Information</h4>
+        <div class="form-fields-container">
+          <div class="form-field-item">
+            <label for="fullName" class="field-label">
+              Full Name
+              <span class="required">*</span>
+            </label>
+            <input
+              id="fullName"
+              type="text"
+              class="form-input"
+              placeholder="Enter full name"
+              formControlName="fullName"
+              />
+          </div>
+          <div class="form-field-item">
+            <label for="dateOfBirth" class="field-label">
+              Date of Birth
+              <span class="required">*</span>
+            </label>
+            <input
+              id="dateOfBirth"
+              type="text"
+              class="form-input"
+              placeholder="Enter your date of birth"
+              formControlName="dateofbirth"
+            />
+          </div>
+          <div class="form-field-item">
+            <label for="gender" class="field-label">
+                Gender
+              <span class="required">*</span>
+            </label>
+            <select formControlName="gender">
+              <option value="" disabled selected>Select your gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+          <div class="form-field-item">
+            <label for="experienceYears" class="field-label">
+              Experience (Years)
+              <span class="required">*</span>
+            </label>
+            <input
+              id="experienceYears"
+              type="text"
+              class="form-input"
+              placeholder="Enter experience (years)"
+              formControlName="experienceyears"
+            />
+          </div>
+          <div class="form-field-item">
+            <label for="linkedin URL" class="field-label">
+              LinkedIn URL
+              <span class="required">*</span>
+            </label>
+             <input
+              id="paste profile URL"
+              type="text"
+              class="form-input"
+              placeholder="Enter pasted profile URL"
+              formControlName="linkedinurl"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="form-section registration-info-section">
+        <h4>Application Details</h4>
+        <div class="form-fields-container">
+          <div class="form-field-item">
+            <label for="currentCompany" class="field-label">
+              Current Company
+              <span class="required">*</span>
+            </label>
+            <input
+              id="currentCompany"
+              type="text"
+              class="form-input"
+              placeholder="Enter  current company"
+              formControlName="currentcompany"
+            />
+          </div>
+          <div class="form-field-item">
+            <label for="expectedCTC" class="field-label">
+              Expected CTC
+              <span class="required">*</span>
+            </label>
+            <input
+            id="expectedCTC"
+              type="text"
+              class="form-input"
+              placeholder="Enter expected CTC"
+              formControlName="expectedCTC"
+            />
+          </div>
+            <div class="form-field-item">
+                <label for="noticePeriod" class="field-label">
+                Notice Period (Days)
+                <span class="required">*</span>
+                </label>
+                <input
+                id="noticePeriod"
+                type="text"
+                class="form-input"
+                placeholder="Enter notice period (days)"
+                formControlName="noticePeriod"
+                 />
+             </div>
+             <div class="form-field-item">
+            <label for="email" class="field-label">
+              Mail Id
+              <span class="required">*</span>
+            </label>
+            <input
+             id="email"
+              type="email"
+              class="form-input"
+              placeholder="Enter email"
+              formControlName="email"
+            />
+            </div>
+            <div class="form-field-item">
+            <label for="phoneNumber" class="field-label">
+              Phone Number
+              <span class="required">*</span>
+            </label>
+            <input
+              id="phoneNumber"
+              type="text"
+              class="form-input"
+              placeholder="Enter  phone number"
+              formControlName="phoneNumber"
+            />
+            </div>
+            </div>
+            </section>
+             <section class="form-section address-section">
+        <h4>Address</h4>
+        <div class="form-fields-container" formGroupName="address">
+          <div class="form-field-item">
+            <label for="street" class="field-label">
+              Street
+              <span class="required">*</span>
+            </label>
+            <input
+              id="street"
+               type="text"
+              class="form-input"
+              placeholder="Enter your street"
+              formControlName="street"
+            />
+          </div>
+          <div class="form-field-item">
+            <label for="city" class="field-label">
+              City
+              <span class="required">*</span>
+            </label>
+            <input
+              id="city"
+              type="text"
+              class="form-input"
+              placeholder="Enter your city"
+              formControlName="city"
+            />
+          </div>
+          <div class="form-field-item">
+            <label for="state" class="field-label">
+              State
+              <span class="required">*</span>
+            </label>
+            <input
+              id="state"
+              type="text"
+              class="form-input"
+              placeholder="Enter your state"
+              formControlName="state"
+            />
+          </div>
+          <div class="form-field-item">
+            <label for="zipCode" class="field-label">
+              Zip Code
+              <span class="required">*</span>
+            </label>
+            <input
+              id="zipCode"
+              type="text"
+              class="form-input"
+              placeholder="Enter your zip code"
+              formControlName="zip"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="form-section skills-section">
+        <h4>Technologies</h4>
+        <div class="form-fields-container">
+          <div class="form-field-item">
+            <label for="technologyInput" class="field-label">Add technology</label>
+            <div class="technology-input-container">
+              <input
+                id="technologyInput"
+                type="text"
+                class="form-input"
+                placeholder="Enter  technology"
+              />
+              <button type="button" class="add-technology-button">Add</button>
+              <div class="technology-values-container"  formArrayName="technologies" *ngIf="technologies.length > 0">
+                <div *ngFor = "let technology of technologies.controls; let i = index" class="technology-badge">
+                  {{ technology.value }}
+                  <span class="remove-badge" (click)="removeTechnology(i)">×</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>  
+      </section>
+      <div class="form-actions">
+        <button type="submit" class="btn-submit">Submit</button>
+        <button type="reset" class="btn-reset">Reset</button>
+      </div>
+      </form>
+  </div>
+</div>
+
+
+
+
+
+

@@ -1,0 +1,228 @@
+<div class="event-registration-form-container">
+  <div class="event-card">
+    <form class="event-card-form" [formGroup]="eventregistrationForm" (ngSubmit)="onSubmit()">
+      <h3>Event Registration Form</h3>
+      <section class="form-section personal-info-section">
+        <h4>Attendee Name</h4>
+        <div class="form-fields-container">
+          <div class="form-field-item">
+            <label for="attendee name" class="field-label">
+              First Name
+              <span class="required">*</span>
+            </label>
+            <input
+              id="attendee Name"
+              type="text"
+              class="form-input"
+              placeholder="Enter attendee name"
+              formControlName="attendee Name"
+              />
+          </div>
+          <div class="form-field-item">
+            <label for="age" class="field-label">
+              Age
+              <span class="required">*</span>
+            </label>
+            <input
+              id="age"
+              type="text"
+              class="form-input"
+              placeholder="Enter age"
+              formControlName="age"
+            />
+          </div>
+          <div class="form-field-item">
+            <label for="gender" class="field-label">
+                Gender
+              <span class="required">*</span>
+            </label>
+            <select formControlName="gender">
+              <option value="" disabled selected>Select your gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+          <div class="form-field-item">
+            <label for="organization" class="field-label">
+              organization
+              <span class="required">*</span>
+            </label>
+             <input
+              id="organization"
+              type="text"
+              class="form-input"
+              placeholder="Enter organization"
+              formControlName="organization"
+            />
+          </div>
+          <div class="form-field-item">
+            <label for="Designation" class="field-label">
+              Designation
+              <span class="required">*</span>
+            </label>
+            <input
+              id="designation"
+              type="text"
+              class="form-input"
+              placeholder="Enter designation"
+              formControlName="designation"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="form-section registration-info-section">
+        <h4>Event Preferences</h4>
+        <div class="form-fields-container">
+          <div class="form-field-item">
+            <label for="email" class="field-label">
+              Mail Id
+              <span class="required">*</span>
+            </label>
+            <input
+             id="email"
+              type="email"
+              class="form-input"
+              placeholder="Enter your email"
+              formControlName="email"
+            />
+          </div>
+          <div class="form-field-item">
+            <label for="phoneNumber" class="field-label">
+              Phone Number
+              <span class="required">*</span>
+            </label>
+            <input
+              id="phoneNumber"
+              type="text"
+              class="form-input"
+              placeholder="Enter your phone number"
+              formControlName="phoneNumber"
+            />
+          </div>
+          <div class="form-field-item">
+            <label for="ticketType" class="field-label">
+              Ticket Type
+              <span class="required">*</span>
+            </label>
+            <select id="ticketType" formControlName="ticketType">
+              <option value="" disabled selected>Select ticket type</option>
+              <option value="standard">Standard</option>
+              <option value="premium">Premium</option>
+            </select>
+          </div>
+          <div class="form-field-item">
+            <label for="mealPreference" class="field-label">
+              Meal Preference
+              <span class="required">*</span>
+            </label>
+            <select id="mealPreference" formControlName="mealPreference">
+              <option value="" disabled selected>Select meal preference</option>
+              <option value="vegetarian">Vegetarian</option>
+              <option value="non-vegetarian">Non-Vegetarian</option>
+            </select>
+          </div>
+           <div class="form-field-item">
+            <label for="emergencyNumber" class="field-label">
+              Emergency Number
+              <span class="required">*</span>
+            </label>
+            <input
+            id="emergencyNumber"
+              type="text"
+              class="form-input"
+              placeholder="Enter emergency number"
+              formControlName="emergencyNumber"
+            />
+          </div>
+         </div>
+      </section>
+      <section class="form-section address-section">
+        <h4>Travel&Location</h4>
+        <div class="form-fields-container" formGroupName="travel&locatio">
+          <div class="form-field-item">
+            <label for="venue city" class="field-label">
+              venue city
+              <span class="required">*</span>
+            </label>
+            <input
+              id="venue city"
+               type="text"
+              class="form-input"
+              placeholder="Enter venue city"
+              formControlName="venue city"
+            />
+          </div>
+          <div class="form-field-item">
+            <label for="travelling from" class="field-label">
+              travelling from
+              <span class="required">*</span>
+            </label>
+            <input
+              id="city"
+              type="text"
+              class="form-input"
+              placeholder="Enter  city"
+              formControlName="city"
+            />
+          </div>
+          <div class="form-field-item">
+            <label for="accommodationRequired" class="field-label">
+              Accommodation Required
+              <span class="required">*</span>
+            </label>
+            <select id="accommodationRequired" formControlName="accommodationRequired">
+              <option value="" disabled selected>Select accommodation requirement</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+           <div class="form-field-item">
+            <label for="zipCode" class="field-label">
+              Zip Code
+              <span class="required">*</span>
+            </label>
+            <input
+              id="zipCode"
+              type="text"
+              class="form-input"
+              placeholder="Enter zip code"
+              formControlName="zip"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="form-section interests-section">
+        <h4>Session Interests</h4>
+        <div class="form-fields-container">
+          <div class="form-field-item">
+            <label for="interestInput" class="field-label">Add interest</label>
+            <div class="interest-input-container">
+              <input
+                id="interestInput"
+                type="text"
+                class="form-input"
+                placeholder="Enter a topic"
+              />
+              <button type="button" class="add-interest-button">Add</button>
+              <div class="interest-values-container"  formArrayName="interests" *ngIf="interests.length > 0">
+                <div *ngFor = "let interest of interests.controls; let i = index" class="interest-badge">
+                  {{ interest.value }}
+                  <span class="remove-badge" (click)="removeInterest(i)">×</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>  
+      </section>
+      <div class="form-actions">
+        <button type="submit" class="btn-submit">Submit</button>
+        <button type="reset" class="btn-reset">Reset</button>
+      </div>
+      </form>
+  </div>
+</div>
+
+
+
+
+
